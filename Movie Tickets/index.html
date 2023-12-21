@@ -1,932 +1,411 @@
-<!-- Copyright 2023 Carmine Libroia
-     This file is part of "Movie Tickets".
-     "Movie Tickets" is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation,
-     either version 3 of the License, or (at your option) any later version.
-     "Movie Tickets" is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
-     FOR A PARTICULAR PURPOSE. See the GNU General Public License for more details.
-     You should have received a copy of the GNU General Public License along with "Movie Tickets". If not, see <https://www.gnu.org/licenses/>. -->
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles.css">
     <title>Movie Tickets</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div class="overlay"></div>
+
+    <!-- <div class="overlay center-positioning"></div> -->
     <header class="flex-start-center">
-        <img class="logo" src="https://placehold.co/50" alt="Company logo">
-        <nav class="flex-start-center">
-            <div class="menu-button">
-                <div></div>
-                <div></div>
-                <div></div>
+        <nav>
+            <img class="logo" src="https://craftypixels.com/placeholder-image/35x35/f38108/f38108" alt="Company logo">
+            <div class="hamburger-menu" onclick="toggleSidebar()">
+                <span></span>
+                <span></span>
+                <span></span>
             </div>
-            <ul class="flex-start-center">
-                <li>Home</li>
-                <li>Reviews</li>
-                <li>Tickets</li>
-                <li>Contacts</li>
-            </ul>
+            <div class="menu-container center-positioning">
+                <ul class="menu center-positioning">
+                    <li>Home</li>
+                    <li>Reviews</li>
+                    <li>Tickets</li>
+                    <li>Contacts</li>
+                </ul>
+                <div class="overlay" onclick="toggleSidebar()"></div>
+            </div>
         </nav>
     </header>
-        <main>
-            <section>
-                <h1>Movie name</h1>
-                <div class="info">
-                    <img class="poster" src="https://placehold.co/288x432" alt="movie-poster">
-                    <div class="info-grid">
-                        <div class="city">
-                            <h2 class="label">City</h2>
-                            <div class="first-selection flex-start-center">
-                                <div>
-                                    <input type="radio" id="milano" name="city" value="milano">
-                                    <label for="milano">Milano</label>
-                                </div>
-                                <div>
-                                    <input type="radio" id="roma" name="city" value="roma">
-                                    <label for="roma">Roma</label>
-                                </div>
-                                <div>
-                                    <input type="radio" id="napoli" name="city" value="napoli">
-                                    <label for="napoli">Napoli</label>
-                                </div>
-                                <div>
-                                    <input type="radio" id="catania" name="city" value="catania">
-                                    <label for="catania">Catania</label>
-                                </div>
-                                <div>
-                                    <input type="radio" id="bari" name="city" value="bari">
-                                    <label for="bari">Bari</label>
-                                </div>
-                                <div>
-                                    <input type="radio" id="palermo" name="city" value="palermo">
-                                    <label for="palermo">Palermo</label>
-                                </div>
-                                <div>
-                                    <input type="radio" id="torino" name="city" value="torino">
-                                    <label for="torino">Torino</label>
-                                </div>
-                                <div>
-                                    <input type="radio" id="venezia" name="city" value="venezia">
-                                    <label for="venezia">Venezia</label>
-                                </div>
-                                <div>
-                                    <input type="radio" id="cagliari" name="city" value="cagliari">
-                                    <label for="cagliari">Cagliari</label>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="date">
-                            <h2 class="label">Date</h2>
-                            <div class="second-selection flex-start-center">
-                                <div>
-                                    <input type="radio" id="sun1" name="date" value="sun1">
-                                    <label for="sun1"><span>Sun</span>1</label>
-                                </div>
-                                <div>
-                                    <input type="radio" id="mon2" name="date" value="mon2">
-                                    <label for="mon2"><span>Mon</span>2</label>
-                                </div>
-                                <div>
-                                    <input type="radio" id="tue3" name="date" value="tue3">
-                                    <label for="tue3"><span>Tue</span>3</label>
-                                </div>
-                                <div>
-                                    <input type="radio" id="wed4" name="date" value="wed4">
-                                    <label for="wed4"><span>Wed</span>4</label>
-                                </div>
-                                <div>
-                                    <input type="radio" id="thu5" name="date" value="thu5">
-                                    <label for="thu5"><span>Thu</span>5</label>
-                                </div>
-                                <div>
-                                    <input type="radio" id="fri6" name="date" value="fri6">
-                                    <label for="fri6"><span>Fri</span>6</label>
-                                </div>
-                                <div>
-                                    <input type="radio" id="sat7" name="date" value="sat7">
-                                    <label for="sat7"><span>Sat</span>7</label>
-                                </div>
-                                <div class="arrow"></div>
-                            </div>
-                        </div>
-                        <div class="theater">
-                            <h2 class="label">Theater</h2>
-                            <div class="first-selection flex-start-center">
-                                <div>
-                                    <input type="radio" id="uci" name="theater" value="uci">
-                                    <label for="uci">Uci Cinemas</label>
-                                </div>
-                                <div>
-                                    <input type="radio" id="space" name="theater" value="space">
-                                    <label for="space">The Space Cinema</label>
-                                </div>
-                                <div>
-                                    <input type="radio" id="cineplex" name="theater" value="cineplex">
-                                    <label for="cineplex">Cineplex</label>
-                                </div>
-                                <div>
-                                    <input type="radio" id="barberini" name="theater" value="barberini">
-                                    <label for="barberini">Multisala Barberini</label>
-                                </div>
-                                <div>
-                                    <input type="radio" id="anteo" name="theater" value="anteo">
-                                    <label for="anteo">Multisala Anteo</label>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="time">
-                            <h2 class="label">Time</h2>
-                            <div class="first-selection flex-start-center">
-                                <div>
-                                    <input type="radio" id="am10" name="time" value="am10">
-                                    <label for="am10">10:00 A.M.</label>
-                                </div>
-                                <div>
-                                    <input type="radio" id="pm12" name="time" value="pm12">
-                                    <label for="pm12">12:30 P.M.</label>
-                                </div>
-                                <div>
-                                    <input type="radio" id="pm16" name="time" value="pm16">
-                                    <label for="pm16">16:00 P.M.</label>
-                                </div>
-                                <div>
-                                    <input type="radio" id="pm18" name="time" value="pm18">
-                                    <label for="pm18">18:30 P.M.</label>
-                                </div>
-                                <div>
-                                    <input type="radio" id="pm21" name="time" value="pm21">
-                                    <label for="pm21">21:00 P.M.</label>
-                                </div>
-                                <div>
-                                    <input type="radio" id="pm22" name="time" value="pm22">
-                                    <label for="pm22">22:00 P.M.</label>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="filler">
-                            <h2 class="label">Other recommendations</h2>
-                            <div class="gallery flex-start-center">
-                                <img class="gallery-poster" src="https://placehold.co/120x180" alt="movie1-poster">
-                                <img class="gallery-poster" src="https://placehold.co/120x180" alt="movie1-poster">
-                                <img class="gallery-poster" src="https://placehold.co/120x180" alt="movie1-poster">
-                                <img class="gallery-poster" src="https://placehold.co/120x180" alt="movie1-poster">
-                                <div class="arrow"></div>
-                            </div>
-                        </div>
-                    </div>
+
+    <main>
+        <div class="title"><h1>Movie Name</h1></div>
+        <section class="movie-section center-positioning">
+            <img class="poster" src="https://placehold.co/288x432" alt="movie-poster">
+            <div class="film-info">
+                <h2>City</h2>
+                <ul>
+                    <li><input type="radio" id="milano" name="city" value="milano"><label for="milano">Milano</label></li>
+                    <li><input type="radio" id="roma" name="city" value="roma"><label for="roma">Roma</label></li>
+                    <li><input type="radio" id="napoli" name="city" value="napoli"><label for="napoli">Napoli</label></li>
+                    <li><input type="radio" id="catania" name="city" value="catania"><label for="catania">Catania</label></li>
+                    <li><input type="radio" id="bari" name="city" value="bari"><label for="bari">Bari</label></li>
+                    <li><input type="radio" id="palermo" name="city" value="palermo"><label for="palermo">Palermo</label></li>
+                    <li><input type="radio" id="torino" name="city" value="torino"><label for="torino">Torino</label></li>
+                    <li><input type="radio" id="venezia" name="city" value="venezia"><label for="venezia">Venezia</label></li>
+                    <li><input type="radio" id="cagliari" name="city" value="cagliari"><label for="cagliari">Cagliari</label></li>
+                </ul>
+
+                <h2>Date</h2>
+                <div class="film-dates">
+                    <input type="radio" id="sun1" name="date" value="sun1">
+                    <label for="sun1">Sun 1</label>
+                    <input type="radio" id="mon2" name="date" value="mon2">
+                    <label for="mon2">Mon 2</label>
+                    <input type="radio" id="tue3" name="date" value="tue3">
+                    <label for="tue3">Tue 3</label>
+                    <input type="radio" id="wed4" name="date" value="wed4">
+                    <label for="wed4">Wed 4</label>
+                    <input type="radio" id="thu5" name="date" value="thu5">
+                    <label for="thu5">Thu 5</label>
+                    <input type="radio" id="fri6" name="date" value="fri6">
+                    <label for="fri6">Fri 6</label>
+                    <input type="radio" id="sat7" name="date" value="sat7">
+                    <label for="sat7">Sat 7</label>
+                    <span class="arrow"></span>
                 </div>
-            </section>
-            <section class="booking">
-                <div class="visual">
-                    <section>
-                        <div class="screen">Screen</div>
-                        <ul class="legend">
-                            <li class="flex-start-center"><span class="seat available"></span><span>Available</span></li>
-                            <li class="flex-start-center"><span class="seat taken"></span><span>Already taken</span></li>
-                            <li class="flex-start-center"><span class="seat selected"></span><span>Selected</span></li>
-                        </ul>
-                        <div class="row">
-                            <div class="left-isle isle flex-start-center" aria-labelledby="menu1">
-                                <div class="seat available"></div>
-                                <div class="seat available"></div>
-                                <div class="seat available"></div>
-                                <div class="seat taken"></div>
-                                <div class="seat available"></div>
-                                <div class="seat available"></div>
-                                <div class="seat available"></div>
-                                <div class="seat taken"></div>
-                                <div class="seat taken"></div>
-                                <div class="seat available"></div>
-                                <div class="seat available"></div>
-                                <div class="seat available"></div>
-                                <div class="seat taken"></div>
-                                <div class="seat available"></div>
-                                <div class="seat taken"></div>
-                                <div class="seat available"></div>
-                            </div>
-                            <div class="center-isle isle flex-start-center" aria-labelledby="menu2">
-                                <div class="seat available"></div>
-                                <div class="seat available"></div>
-                                <div class="seat taken"></div>
-                                <div class="seat available"></div>
-                                <div class="seat available"></div>
-                                <div class="seat available"></div>
-                                <div class="seat taken"></div>
-                                <div class="seat available"></div>
-                                <div class="seat taken"></div>
-                                <div class="seat available"></div>
-                                <div class="seat available"></div>
-                                <div class="seat taken"></div>
-                                <div class="seat available"></div>
-                                <div class="seat taken"></div>
-                                <div class="seat available"></div>
-                                <div class="seat available"></div>
-                                <div class="seat available"></div>
-                                <div class="seat available"></div>
-                                <div class="seat taken"></div>
-                                <div class="seat available"></div>
-                                <div class="seat available"></div>
-                                <div class="seat taken"></div>
-                                <div class="seat available"></div>
-                                <div class="seat available"></div>
-                                <div class="seat taken"></div>
-                                <div class="seat available"></div>
-                                <div class="seat available"></div>
-                                <div class="seat taken"></div>
-                                <div class="seat available"></div>
-                                <div class="seat available"></div>
-                                <div class="seat taken"></div>
-                                <div class="seat available"></div>
-                                <div class="seat available"></div>
-                                <div class="seat available"></div>
-                                <div class="seat available"></div>
-                                <div class="seat taken"></div>
-                                <div class="seat taken"></div>
-                                <div class="seat available"></div>
-                                <div class="seat available"></div>
-                                <div class="seat available"></div>
-                            </div>
-                            <div class="right-isle isle flex-start-center" aria-labelledby="menu3">
-                                <div class="seat available"></div>
-                                <div class="seat available"></div>
-                                <div class="seat taken"></div>
-                                <div class="seat taken"></div>
-                                <div class="seat available"></div>
-                                <div class="seat available"></div>
-                                <div class="seat available"></div>
-                                <div class="seat taken"></div>
-                                <div class="seat available"></div>
-                                <div class="seat available"></div>
-                                <div class="seat available"></div>
-                                <div class="seat taken"></div>
-                                <div class="seat available"></div>
-                                <div class="seat available"></div>
-                                <div class="seat taken"></div>
-                                <div class="seat available"></div>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="left-isle isle flex-start-center" aria-labelledby="menu4">
-                                <div class="seat available"></div>
-                                <div class="seat taken"></div>
-                                <div class="seat available"></div>
-                                <div class="seat taken"></div>
-                                <div class="seat available"></div>
-                                <div class="seat available"></div>
-                                <div class="seat taken"></div>
-                                <div class="seat taken"></div>
-                                <div class="seat available"></div>
-                                <div class="seat available"></div>
-                                <div class="seat taken"></div>
-                                <div class="seat taken"></div>
-                                <div class="seat taken"></div>
-                                <div class="seat available"></div>
-                                <div class="seat available"></div>
-                                <div class="seat taken"></div>
-                            </div>
-                            <div class="center-isle isle flex-start-center" aria-labelledby="menu5">
-                                <div class="seat available"></div>
-                                <div class="seat available"></div>
-                                <div class="seat available"></div>
-                                <div class="seat taken"></div>
-                                <div class="seat available"></div>
-                                <div class="seat taken"></div>
-                                <div class="seat taken"></div>
-                                <div class="seat available"></div>
-                                <div class="seat taken"></div>
-                                <div class="seat available"></div>
-                                <div class="seat available"></div>
-                                <div class="seat available"></div>
-                                <div class="seat taken"></div>
-                                <div class="seat available"></div>
-                                <div class="seat available"></div>
-                                <div class="seat taken"></div>
-                                <div class="seat taken"></div>
-                                <div class="seat available"></div>
-                                <div class="seat taken"></div>
-                                <div class="seat available"></div>
-                                <div class="seat taken"></div>
-                                <div class="seat taken"></div>
-                                <div class="seat taken"></div>
-                                <div class="seat available"></div>
-                                <div class="seat taken"></div>
-                                <div class="seat taken"></div>
-                                <div class="seat taken"></div>
-                                <div class="seat available"></div>
-                                <div class="seat taken"></div>
-                                <div class="seat available"></div>
-                                <div class="seat taken"></div>
-                                <div class="seat taken"></div>
-                                <div class="seat taken"></div>
-                                <div class="seat available"></div>
-                                <div class="seat available"></div>
-                                <div class="seat taken"></div>
-                                <div class="seat available"></div>
-                                <div class="seat available"></div>
-                                <div class="seat available"></div>
-                                <div class="seat taken"></div>
-                            </div>
-                            <div class="right-isle isle flex-start-center" aria-labelledby="menu6">
-                                <div class="seat available"></div>
-                                <div class="seat available"></div>
-                                <div class="seat taken"></div>
-                                <div class="seat taken"></div>
-                                <div class="seat available"></div>
-                                <div class="seat available"></div>
-                                <div class="seat taken"></div>
-                                <div class="seat taken"></div>
-                                <div class="seat taken"></div>
-                                <div class="seat available"></div>
-                                <div class="seat taken"></div>
-                                <div class="seat available"></div>
-                                <div class="seat available"></div>
-                                <div class="seat taken"></div>
-                                <div class="seat taken"></div>
-                                <div class="seat available"></div>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="left-isle isle flex-start-center" aria-labelledby="menu7">
-                                <div class="seat available"></div>
-                                <div class="seat available"></div>
-                                <div class="seat taken"></div>
-                                <div class="seat available"></div>
-                                <div class="seat taken"></div>
-                                <div class="seat available"></div>
-                                <div class="seat available"></div>
-                                <div class="seat taken"></div>
-                                <div class="seat available"></div>
-                                <div class="seat taken"></div>
-                                <div class="seat taken"></div>
-                                <div class="seat taken"></div>
-                                <div class="seat available"></div>
-                                <div class="seat taken"></div>
-                                <div class="seat available"></div>
-                                <div class="seat taken"></div>
-                                <div class="seat available"></div>
-                                <div class="seat available"></div>
-                                <div class="seat taken"></div>
-                                <div class="seat available"></div>
-                                <div class="seat available"></div>
-                                <div class="seat available"></div>
-                                <div class="seat taken"></div>
-                                <div class="seat available"></div>
-                                <div class="seat available"></div>
-                                <div class="seat taken"></div>
-                                <div class="seat available"></div>
-                                <div class="seat available"></div>
-                            </div>
-                            <div class="center-isle isle flex-start-center" aria-labelledby="menu8">
-                                <div class="seat available"></div>
-                                <div class="seat taken"></div>
-                                <div class="seat taken"></div>
-                                <div class="seat available"></div>
-                                <div class="seat taken"></div>
-                                <div class="seat available"></div>
-                                <div class="seat taken"></div>
-                                <div class="seat available"></div>
-                                <div class="seat available"></div>
-                                <div class="seat available"></div>
-                                <div class="seat taken"></div>
-                                <div class="seat taken"></div>
-                                <div class="seat taken"></div>
-                                <div class="seat available"></div>
-                                <div class="seat taken"></div>
-                                <div class="seat available"></div>
-                                <div class="seat available"></div>
-                                <div class="seat taken"></div>
-                                <div class="seat available"></div>
-                                <div class="seat available"></div>
-                                <div class="seat taken"></div>
-                                <div class="seat available"></div>
-                                <div class="seat taken"></div>
-                                <div class="seat available"></div>
-                                <div class="seat taken"></div>
-                                <div class="seat taken"></div>
-                                <div class="seat available"></div>
-                                <div class="seat available"></div>
-                                <div class="seat taken"></div>
-                                <div class="seat available"></div>
-                                <div class="seat available"></div>
-                                <div class="seat taken"></div>
-                                <div class="seat available"></div>
-                                <div class="seat available"></div>
-                                <div class="seat available"></div>
-                                <div class="seat taken"></div>
-                                <div class="seat available"></div>
-                                <div class="seat available"></div>
-                                <div class="seat taken"></div>
-                                <div class="seat available"></div>
-                                <div class="seat taken"></div>
-                                <div class="seat available"></div>
-                                <div class="seat taken"></div>
-                                <div class="seat taken"></div>
-                                <div class="seat available"></div>
-                                <div class="seat taken"></div>
-                                <div class="seat available"></div>
-                                <div class="seat taken"></div>
-                                <div class="seat available"></div>
-                                <div class="seat taken"></div>
-                                <div class="seat available"></div>
-                                <div class="seat available"></div>
-                                <div class="seat taken"></div>
-                                <div class="seat available"></div>
-                                <div class="seat taken"></div>
-                                <div class="seat taken"></div>
-                                <div class="seat available"></div>
-                                <div class="seat taken"></div>
-                                <div class="seat available"></div>
-                                <div class="seat available"></div>
-                                <div class="seat available"></div>
-                                <div class="seat available"></div>
-                                <div class="seat available"></div>
-                                <div class="seat taken"></div>
-                                <div class="seat available"></div>
-                                <div class="seat available"></div>
-                                <div class="seat available"></div>
-                                <div class="seat available"></div>
-                                <div class="seat available"></div>
-                                <div class="seat available"></div>
-                            </div>
-                            <div class="right-isle isle flex-start-center" aria-labelledby="menu9">
-                                <div class="seat available"></div>
-                                <div class="seat available"></div>
-                                <div class="seat taken"></div>
-                                <div class="seat available"></div>
-                                <div class="seat taken"></div>
-                                <div class="seat available"></div>
-                                <div class="seat taken"></div>
-                                <div class="seat available"></div>
-                                <div class="seat taken"></div>
-                                <div class="seat available"></div>
-                                <div class="seat taken"></div>
-                                <div class="seat available"></div>
-                                <div class="seat taken"></div>
-                                <div class="seat available"></div>
-                                <div class="seat taken"></div>
-                                <div class="seat available"></div>
-                                <div class="seat available"></div>
-                                <div class="seat taken"></div>
-                                <div class="seat available"></div>
-                                <div class="seat available"></div>
-                                <div class="seat taken"></div>
-                                <div class="seat available"></div>
-                                <div class="seat taken"></div>
-                                <div class="seat available"></div>
-                                <div class="seat available"></div>
-                                <div class="seat available"></div>
-                                <div class="seat taken"></div>
-                                <div class="seat available"></div>
-                            </div>
-                        </div>
-                    </section>
+
+                <h2>Theater</h2>
+                <ul>
+                    <li><input type="radio" id="uci" name="city" value="uci"><label for="uci">Uci Cinema</label></li>
+                    <li><input type="radio" id="space" name="city" value="space"><label for="space">The Space Cinema</label></li>
+                    <li><input type="radio" id="cineplex" name="city" value="cineplex"><label for="cineplex">Cineplex</label></li>
+                    <li><input type="radio" id="barberini" name="city" value="barberini"><label for="barberini">Multisala Barberini</label></li>
+                    <li><input type="radio" id="anteo" name="city" value="anteo"><label for="anteo">Multisala Anteo</label></li>
+                </ul>
+
+                <h2>Time</h2>
+                <ul>
+                    <li><input type="radio" id="am10" name="time" value="am10"><label for="am10">10:00 A.M.</label></li>
+                    <li><input type="radio" id="pm12" name="time" value="pm12"><label for="pm12">12:30 P.M.</label></li>
+                    <li><input type="radio" id="pm16" name="time" value="pm16"><label for="pm16">16:00 P.M.</label></li>
+                    <li><input type="radio" id="pm18" name="time" value="pm18"><label for="pm18">18:30 P.M.</label></li>
+                    <li><input type="radio" id="pm21" name="time" value="pm21"><label for="pm21">21:00 P.M.</label></li>
+                    <li><input type="radio" id="pm22" name="time" value="pm22"><label for="pm22">22:00 P.M.</label></li>
+                </ul>
+            </div>
+        </section>
+
+
+        <section class="booking-section center-positioning">
+            <h2>Screen</h2>
+
+            <div class="purchase-popup">
+                <p>Selected Seats <span class="selected-seats-popup">0</span></p>
+                <p>Total <span class="total-prices-popup">0</span></p>
+                <button>Proceed</button>
+            </div>
+
+            <div class="row">
+                <div class="left-isle isle flex-start-center" aria-labelledby="menu1">
+                    <div class="seat available"></div>
+                    <div class="seat available"></div>
+                    <div class="seat available"></div>
+                    <div class="seat taken"></div>
+                    <div class="seat available"></div>
+                    <div class="seat available"></div>
+                    <div class="seat available"></div>
+                    <div class="seat taken"></div>
+                    <div class="seat taken"></div>
+                    <div class="seat available"></div>
+                    <div class="seat available"></div>
+                    <div class="seat available"></div>
+                    <div class="seat taken"></div>
+                    <div class="seat available"></div>
+                    <div class="seat taken"></div>
+                    <div class="seat available"></div>
                 </div>
-                <section class="mobile-menu" id="menu1">
-                    <div>
-                        <ul class="legend">
-                            <li class="flex-start-center"><span class="seat available"></span><span>Available</span></li>
-                            <li class="flex-start-center"><span class="seat selected"></span><span>Selected</span></li>
-                            <li class="flex-start-center"><span class="seat taken"></span><span>Already taken</span></li>
-                        </ul>
-                    </div>
-                    <div class="mobile-little-isle mobile-isle">
-                        <div class="seat available"></div>
-                        <div class="seat available"></div>
-                        <div class="seat available"></div>
-                        <div class="seat taken"></div>
-                        <div class="seat available"></div>
-                        <div class="seat available"></div>
-                        <div class="seat available"></div>
-                        <div class="seat taken"></div>
-                        <div class="seat taken"></div>
-                        <div class="seat available"></div>
-                        <div class="seat available"></div>
-                        <div class="seat available"></div>
-                        <div class="seat taken"></div>
-                        <div class="seat available"></div>
-                        <div class="seat taken"></div>
-                        <div class="seat available"></div>
-                    </div>
-                    <div class="sidebar">
-                        <h2><span>Selected seats</span><span class="number"></span></h2>
-                        <div class="mobile-sidebar-line flex-start-center">
-                            <h2><b>Total</b><span class="total"></span></h2>
-                            <button type="button">Proceed</button>
-                        </div>
-                    </div>
-                </section>
-                <section class="mobile-menu" id="menu2">
-                    <div>
-                        <ul class="legend">
-                            <li class="flex-start-center"><span class="seat available"></span><span>Available</span></li>
-                            <li class="flex-start-center"><span class="seat selected"></span><span>Selected</span></li>
-                            <li class="flex-start-center"><span class="seat taken"></span><span>Already taken</span></li>
-                        </ul>
-                    </div>
-                    <div class="mobile-big-isle mobile-isle">
-                        <div class="seat available"></div>
-                        <div class="seat available"></div>
-                        <div class="seat taken"></div>
-                        <div class="seat available"></div>
-                        <div class="seat available"></div>
-                        <div class="seat available"></div>
-                        <div class="seat taken"></div>
-                        <div class="seat available"></div>
-                        <div class="seat taken"></div>
-                        <div class="seat available"></div>
-                        <div class="seat available"></div>
-                        <div class="seat taken"></div>
-                        <div class="seat available"></div>
-                        <div class="seat taken"></div>
-                        <div class="seat available"></div>
-                        <div class="seat available"></div>
-                        <div class="seat available"></div>
-                        <div class="seat available"></div>
-                        <div class="seat taken"></div>
-                        <div class="seat available"></div>
-                        <div class="seat available"></div>
-                        <div class="seat taken"></div>
-                        <div class="seat available"></div>
-                        <div class="seat available"></div>
-                        <div class="seat taken"></div>
-                        <div class="seat available"></div>
-                        <div class="seat available"></div>
-                        <div class="seat taken"></div>
-                        <div class="seat available"></div>
-                        <div class="seat available"></div>
-                        <div class="seat taken"></div>
-                        <div class="seat available"></div>
-                        <div class="seat available"></div>
-                        <div class="seat available"></div>
-                        <div class="seat available"></div>
-                        <div class="seat taken"></div>
-                        <div class="seat taken"></div>
-                        <div class="seat available"></div>
-                        <div class="seat available"></div>
-                        <div class="seat available"></div>
-                    </div>
-                    <div class="sidebar">
-                        <h2><span>Selected seats</span><span class="number"></span></h2>
-                        <div class="mobile-sidebar-line flex-start-center">
-                            <h2><b>Total</b><span class="total"></span></h2>
-                            <button type="button">Proceed</button>
-                        </div>
-                    </div>
-                </section>
-                <section class="mobile-menu" id="menu3">
-                    <div>
-                        <ul class="legend">
-                            <li class="flex-start-center"><span class="seat available"></span><span>Available</span></li>
-                            <li class="flex-start-center"><span class="seat selected"></span><span>Selected</span></li>
-                            <li class="flex-start-center"><span class="seat taken"></span><span>Already taken</span></li>
-                        </ul>
-                    </div>
-                    <div class="mobile-little-isle mobile-isle">
-                        <div class="seat available"></div>
-                        <div class="seat available"></div>
-                        <div class="seat taken"></div>
-                        <div class="seat taken"></div>
-                        <div class="seat available"></div>
-                        <div class="seat available"></div>
-                        <div class="seat available"></div>
-                        <div class="seat taken"></div>
-                        <div class="seat available"></div>
-                        <div class="seat available"></div>
-                        <div class="seat available"></div>
-                        <div class="seat taken"></div>
-                        <div class="seat available"></div>
-                        <div class="seat available"></div>
-                        <div class="seat taken"></div>
-                        <div class="seat available"></div>
-                    </div>
-                    <div class="sidebar">
-                        <h2><span>Selected seats</span><span class="number"></span></h2>
-                        <div class="mobile-sidebar-line flex-start-center">
-                            <h2><b>Total</b><span class="total"></span></h2>
-                            <button type="button">Proceed</button>
-                        </div>
-                    </div>
-                </section>
-                <section class="mobile-menu" id="menu4">
-                    <div>
-                        <ul class="legend">
-                            <li class="flex-start-center"><span class="seat available"></span><span>Available</span></li>
-                            <li class="flex-start-center"><span class="seat selected"></span><span>Selected</span></li>
-                            <li class="flex-start-center"><span class="seat taken"></span><span>Already taken</span></li>
-                        </ul>
-                    </div>
-                    <div class="mobile-little-isle mobile-isle">
-                        <div class="seat available"></div>
-                        <div class="seat taken"></div>
-                        <div class="seat available"></div>
-                        <div class="seat taken"></div>
-                        <div class="seat available"></div>
-                        <div class="seat available"></div>
-                        <div class="seat taken"></div>
-                        <div class="seat taken"></div>
-                        <div class="seat available"></div>
-                        <div class="seat available"></div>
-                        <div class="seat taken"></div>
-                        <div class="seat taken"></div>
-                        <div class="seat taken"></div>
-                        <div class="seat available"></div>
-                        <div class="seat available"></div>
-                        <div class="seat taken"></div>
-                    </div>
-                    <div class="sidebar">
-                        <h2><span>Selected seats</span><span class="number"></span></h2>
-                        <div class="mobile-sidebar-line flex-start-center">
-                            <h2><b>Total</b><span class="total"></span></h2>
-                            <button type="button">Proceed</button>
-                        </div>
-                    </div>
-                </section>
-                <section class="mobile-menu" id="menu5">
-                    <div>
-                        <ul class="legend">
-                            <li class="flex-start-center"><span class="seat available"></span><span>Available</span></li>
-                            <li class="flex-start-center"><span class="seat selected"></span><span>Selected</span></li>
-                            <li class="flex-start-center"><span class="seat taken"></span><span>Already taken</span></li>
-                        </ul>
-                    </div>
-                    <div class="mobile-big-isle mobile-isle">
-                        <div class="seat available"></div>
-                        <div class="seat available"></div>
-                        <div class="seat available"></div>
-                        <div class="seat taken"></div>
-                        <div class="seat available"></div>
-                        <div class="seat taken"></div>
-                        <div class="seat taken"></div>
-                        <div class="seat available"></div>
-                        <div class="seat taken"></div>
-                        <div class="seat available"></div>
-                        <div class="seat available"></div>
-                        <div class="seat available"></div>
-                        <div class="seat taken"></div>
-                        <div class="seat available"></div>
-                        <div class="seat available"></div>
-                        <div class="seat taken"></div>
-                        <div class="seat taken"></div>
-                        <div class="seat available"></div>
-                        <div class="seat taken"></div>
-                        <div class="seat available"></div>
-                        <div class="seat taken"></div>
-                        <div class="seat taken"></div>
-                        <div class="seat taken"></div>
-                        <div class="seat available"></div>
-                        <div class="seat taken"></div>
-                        <div class="seat taken"></div>
-                        <div class="seat taken"></div>
-                        <div class="seat available"></div>
-                        <div class="seat taken"></div>
-                        <div class="seat available"></div>
-                        <div class="seat taken"></div>
-                        <div class="seat taken"></div>
-                        <div class="seat taken"></div>
-                        <div class="seat available"></div>
-                        <div class="seat available"></div>
-                        <div class="seat taken"></div>
-                        <div class="seat available"></div>
-                        <div class="seat available"></div>
-                        <div class="seat available"></div>
-                        <div class="seat taken"></div>
-                    </div>
-                    <div class="sidebar">
-                        <h2><span>Selected seats</span><span class="number"></span></h2>
-                        <div class="mobile-sidebar-line flex-start-center">
-                            <h2><b>Total</b><span class="total"></span></h2>
-                            <button type="button">Proceed</button>
-                        </div>
-                    </div>
-                </section>
-                <section class="mobile-menu" id="menu6">
-                    <div>
-                        <ul class="legend">
-                            <li class="flex-start-center"><span class="seat available"></span><span>Available</span></li>
-                            <li class="flex-start-center"><span class="seat selected"></span><span>Selected</span></li>
-                            <li class="flex-start-center"><span class="seat taken"></span><span>Already taken</span></li>
-                        </ul>
-                    </div>
-                    <div class="mobile-little-isle mobile-isle">
-                        <div class="seat available"></div>
-                        <div class="seat available"></div>
-                        <div class="seat taken"></div>
-                        <div class="seat taken"></div>
-                        <div class="seat available"></div>
-                        <div class="seat available"></div>
-                        <div class="seat taken"></div>
-                        <div class="seat taken"></div>
-                        <div class="seat taken"></div>
-                        <div class="seat available"></div>
-                        <div class="seat taken"></div>
-                        <div class="seat available"></div>
-                        <div class="seat available"></div>
-                        <div class="seat taken"></div>
-                        <div class="seat taken"></div>
-                        <div class="seat available"></div>
-                    </div>
-                    <div class="sidebar">
-                        <h2><span>Selected seats</span><span class="number"></span></h2>
-                        <div class="mobile-sidebar-line flex-start-center">
-                            <h2><b>Total</b><span class="total"></span></h2>
-                            <button type="button">Proceed</button>
-                        </div>
-                    </div>
-                </section>
-                <section class="mobile-menu" id="menu7">
-                    <div>
-                        <ul class="legend">
-                            <li class="flex-start-center"><span class="seat available"></span><span>Available</span></li>
-                            <li class="flex-start-center"><span class="seat selected"></span><span>Selected</span></li>
-                            <li class="flex-start-center"><span class="seat taken"></span><span>Already taken</span></li>
-                        </ul>
-                    </div>
-                    <div class="mobile-little-isle mobile-isle">
-                        <div class="seat available"></div>
-                        <div class="seat available"></div>
-                        <div class="seat taken"></div>
-                        <div class="seat available"></div>
-                        <div class="seat taken"></div>
-                        <div class="seat available"></div>
-                        <div class="seat available"></div>
-                        <div class="seat taken"></div>
-                        <div class="seat available"></div>
-                        <div class="seat taken"></div>
-                        <div class="seat taken"></div>
-                        <div class="seat taken"></div>
-                        <div class="seat available"></div>
-                        <div class="seat taken"></div>
-                        <div class="seat available"></div>
-                        <div class="seat taken"></div>
-                        <div class="seat available"></div>
-                        <div class="seat available"></div>
-                        <div class="seat taken"></div>
-                        <div class="seat available"></div>
-                        <div class="seat available"></div>
-                        <div class="seat available"></div>
-                        <div class="seat taken"></div>
-                        <div class="seat available"></div>
-                        <div class="seat available"></div>
-                        <div class="seat taken"></div>
-                        <div class="seat available"></div>
-                        <div class="seat available"></div>
-                    </div>
-                    <div class="sidebar">
-                        <h2><span>Selected seats</span><span class="number"></span></h2>
-                        <div class="mobile-sidebar-line flex-start-center">
-                            <h2><b>Total</b><span class="total"></span></h2>
-                            <button type="button">Proceed</button>
-                        </div>
-                    </div>
-                </section>
-                <section class="mobile-menu" id="menu8">
-                    <div>
-                        <ul class="legend">
-                            <li class="flex-start-center"><span class="seat available"></span><span>Available</span></li>
-                            <li class="flex-start-center"><span class="seat selected"></span><span>Selected</span></li>
-                            <li class="flex-start-center"><span class="seat taken"></span><span>Already taken</span></li>
-                        </ul>
-                    </div>
-                    <div class="mobile-big-isle mobile-isle">
-                        <div class="seat available"></div>
-                        <div class="seat taken"></div>
-                        <div class="seat taken"></div>
-                        <div class="seat available"></div>
-                        <div class="seat taken"></div>
-                        <div class="seat available"></div>
-                        <div class="seat taken"></div>
-                        <div class="seat available"></div>
-                        <div class="seat available"></div>
-                        <div class="seat available"></div>
-                        <div class="seat taken"></div>
-                        <div class="seat taken"></div>
-                        <div class="seat taken"></div>
-                        <div class="seat available"></div>
-                        <div class="seat taken"></div>
-                        <div class="seat available"></div>
-                        <div class="seat available"></div>
-                        <div class="seat taken"></div>
-                        <div class="seat available"></div>
-                        <div class="seat available"></div>
-                        <div class="seat taken"></div>
-                        <div class="seat available"></div>
-                        <div class="seat taken"></div>
-                        <div class="seat available"></div>
-                        <div class="seat taken"></div>
-                        <div class="seat taken"></div>
-                        <div class="seat available"></div>
-                        <div class="seat available"></div>
-                        <div class="seat taken"></div>
-                        <div class="seat available"></div>
-                        <div class="seat available"></div>
-                        <div class="seat taken"></div>
-                        <div class="seat available"></div>
-                        <div class="seat available"></div>
-                        <div class="seat available"></div>
-                        <div class="seat taken"></div>
-                        <div class="seat available"></div>
-                        <div class="seat available"></div>
-                        <div class="seat taken"></div>
-                        <div class="seat available"></div>
-                        <div class="seat taken"></div>
-                        <div class="seat available"></div>
-                        <div class="seat taken"></div>
-                        <div class="seat taken"></div>
-                        <div class="seat available"></div>
-                        <div class="seat taken"></div>
-                        <div class="seat available"></div>
-                        <div class="seat taken"></div>
-                        <div class="seat available"></div>
-                        <div class="seat taken"></div>
-                        <div class="seat available"></div>
-                        <div class="seat available"></div>
-                        <div class="seat taken"></div>
-                        <div class="seat available"></div>
-                        <div class="seat taken"></div>
-                        <div class="seat taken"></div>
-                        <div class="seat available"></div>
-                        <div class="seat taken"></div>
-                        <div class="seat available"></div>
-                        <div class="seat available"></div>
-                        <div class="seat available"></div>
-                        <div class="seat available"></div>
-                        <div class="seat available"></div>
-                        <div class="seat taken"></div>
-                        <div class="seat available"></div>
-                        <div class="seat available"></div>
-                        <div class="seat available"></div>
-                        <div class="seat available"></div>
-                        <div class="seat available"></div>
-                        <div class="seat available"></div>
-                    </div>
-                    <div class="sidebar">
-                        <h2><span>Selected seats</span><span class="number"></span></h2>
-                        <div class="mobile-sidebar-line flex-start-center">
-                            <h2><b>Total</b><span class="total"></span></h2>
-                            <button type="button">Proceed</button>
-                        </div>
-                    </div>
-                </section>
-                <section class="mobile-menu" id="menu9">
-                    <div>
-                        <ul class="legend">
-                            <li class="flex-start-center"><span class="seat available"></span><span>Available</span></li>
-                            <li class="flex-start-center"><span class="seat selected"></span><span>Selected</span></li>
-                            <li class="flex-start-center"><span class="seat taken"></span><span>Already taken</span></li>
-                        </ul>
-                    </div>
-                    <div class="mobile-little-isle mobile-isle">
-                        <div class="seat available"></div>
-                        <div class="seat available"></div>
-                        <div class="seat taken"></div>
-                        <div class="seat available"></div>
-                        <div class="seat taken"></div>
-                        <div class="seat available"></div>
-                        <div class="seat taken"></div>
-                        <div class="seat available"></div>
-                        <div class="seat taken"></div>
-                        <div class="seat available"></div>
-                        <div class="seat taken"></div>
-                        <div class="seat available"></div>
-                        <div class="seat taken"></div>
-                        <div class="seat available"></div>
-                        <div class="seat taken"></div>
-                        <div class="seat available"></div>
-                        <div class="seat available"></div>
-                        <div class="seat taken"></div>
-                        <div class="seat available"></div>
-                        <div class="seat available"></div>
-                        <div class="seat taken"></div>
-                        <div class="seat available"></div>
-                        <div class="seat taken"></div>
-                        <div class="seat available"></div>
-                        <div class="seat available"></div>
-                        <div class="seat available"></div>
-                        <div class="seat taken"></div>
-                        <div class="seat available"></div>
-                    </div>
-                    <div class="sidebar">
-                        <h2><span>Selected seats</span><span class="number"></span></h2>
-                        <div class="mobile-sidebar-line flex-start-center">
-                            <h2><b>Total</b><span class="total"></span></h2>
-                            <button type="button">Proceed</button>
-                        </div>
-                    </div>
-                </section>
-                <section class="sidebar">
-                    <h2>Selected seats<span class="number"></span></h2>
-                    <h2><b>Total</b><span class="total"></span></h2>
-                    <button type="button">Proceed</button>
-                </section>
-            </section>
-        </main>
-    <footer>
-        <p>Copyright 2023 Carmine Libroia</p>
+                <div class="center-isle isle flex-start-center" aria-labelledby="menu2">
+                    <div class="seat available"></div>
+                    <div class="seat available"></div>
+                    <div class="seat taken"></div>
+                    <div class="seat available"></div>
+                    <div class="seat available"></div>
+                    <div class="seat available"></div>
+                    <div class="seat taken"></div>
+                    <div class="seat available"></div>
+                    <div class="seat taken"></div>
+                    <div class="seat available"></div>
+                    <div class="seat available"></div>
+                    <div class="seat taken"></div>
+                    <div class="seat available"></div>
+                    <div class="seat taken"></div>
+                    <div class="seat available"></div>
+                    <div class="seat available"></div>
+                    <div class="seat available"></div>
+                    <div class="seat available"></div>
+                    <div class="seat taken"></div>
+                    <div class="seat available"></div>
+                    <div class="seat available"></div>
+                    <div class="seat taken"></div>
+                    <div class="seat available"></div>
+                    <div class="seat available"></div>
+                    <div class="seat taken"></div>
+                    <div class="seat available"></div>
+                    <div class="seat available"></div>
+                    <div class="seat taken"></div>
+                    <div class="seat available"></div>
+                    <div class="seat available"></div>
+                    <div class="seat taken"></div>
+                    <div class="seat available"></div>
+                    <div class="seat available"></div>
+                    <div class="seat available"></div>
+                    <div class="seat available"></div>
+                    <div class="seat taken"></div>
+                    <div class="seat taken"></div>
+                    <div class="seat available"></div>
+                    <div class="seat available"></div>
+                    <div class="seat available"></div>
+                </div>
+                <div class="right-isle isle flex-start-center" aria-labelledby="menu3">
+                    <div class="seat available"></div>
+                    <div class="seat available"></div>
+                    <div class="seat taken"></div>
+                    <div class="seat taken"></div>
+                    <div class="seat available"></div>
+                    <div class="seat available"></div>
+                    <div class="seat available"></div>
+                    <div class="seat taken"></div>
+                    <div class="seat available"></div>
+                    <div class="seat available"></div>
+                    <div class="seat available"></div>
+                    <div class="seat taken"></div>
+                    <div class="seat available"></div>
+                    <div class="seat available"></div>
+                    <div class="seat taken"></div>
+                    <div class="seat available"></div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="left-isle isle flex-start-center" aria-labelledby="menu4">
+                    <div class="seat available"></div>
+                    <div class="seat taken"></div>
+                    <div class="seat available"></div>
+                    <div class="seat taken"></div>
+                    <div class="seat available"></div>
+                    <div class="seat available"></div>
+                    <div class="seat taken"></div>
+                    <div class="seat taken"></div>
+                    <div class="seat available"></div>
+                    <div class="seat available"></div>
+                    <div class="seat taken"></div>
+                    <div class="seat taken"></div>
+                    <div class="seat taken"></div>
+                    <div class="seat available"></div>
+                    <div class="seat available"></div>
+                    <div class="seat taken"></div>
+                </div>
+                <div class="center-isle isle flex-start-center" aria-labelledby="menu5">
+                    <div class="seat available"></div>
+                    <div class="seat available"></div>
+                    <div class="seat available"></div>
+                    <div class="seat taken"></div>
+                    <div class="seat available"></div>
+                    <div class="seat taken"></div>
+                    <div class="seat taken"></div>
+                    <div class="seat available"></div>
+                    <div class="seat taken"></div>
+                    <div class="seat available"></div>
+                    <div class="seat available"></div>
+                    <div class="seat available"></div>
+                    <div class="seat taken"></div>
+                    <div class="seat available"></div>
+                    <div class="seat available"></div>
+                    <div class="seat taken"></div>
+                    <div class="seat taken"></div>
+                    <div class="seat available"></div>
+                    <div class="seat taken"></div>
+                    <div class="seat available"></div>
+                    <div class="seat taken"></div>
+                    <div class="seat taken"></div>
+                    <div class="seat taken"></div>
+                    <div class="seat available"></div>
+                    <div class="seat taken"></div>
+                    <div class="seat taken"></div>
+                    <div class="seat taken"></div>
+                    <div class="seat available"></div>
+                    <div class="seat taken"></div>
+                    <div class="seat available"></div>
+                    <div class="seat taken"></div>
+                    <div class="seat taken"></div>
+                    <div class="seat taken"></div>
+                    <div class="seat available"></div>
+                    <div class="seat available"></div>
+                    <div class="seat taken"></div>
+                    <div class="seat available"></div>
+                    <div class="seat available"></div>
+                    <div class="seat available"></div>
+                    <div class="seat taken"></div>
+                </div>
+                <div class="right-isle isle flex-start-center" aria-labelledby="menu6">
+                    <div class="seat available"></div>
+                    <div class="seat available"></div>
+                    <div class="seat taken"></div>
+                    <div class="seat taken"></div>
+                    <div class="seat available"></div>
+                    <div class="seat available"></div>
+                    <div class="seat taken"></div>
+                    <div class="seat taken"></div>
+                    <div class="seat taken"></div>
+                    <div class="seat available"></div>
+                    <div class="seat taken"></div>
+                    <div class="seat available"></div>
+                    <div class="seat available"></div>
+                    <div class="seat taken"></div>
+                    <div class="seat taken"></div>
+                    <div class="seat available"></div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="left-isle isle flex-start-center" aria-labelledby="menu7">
+                    <div class="seat available"></div>
+                    <div class="seat available"></div>
+                    <div class="seat taken"></div>
+                    <div class="seat available"></div>
+                    <div class="seat taken"></div>
+                    <div class="seat available"></div>
+                    <div class="seat available"></div>
+                    <div class="seat taken"></div>
+                    <div class="seat available"></div>
+                    <div class="seat taken"></div>
+                    <div class="seat taken"></div>
+                    <div class="seat taken"></div>
+                    <div class="seat available"></div>
+                    <div class="seat taken"></div>
+                    <div class="seat available"></div>
+                    <div class="seat taken"></div>
+                    <div class="seat available"></div>
+                    <div class="seat available"></div>
+                    <div class="seat taken"></div>
+                    <div class="seat available"></div>
+                    <div class="seat available"></div>
+                    <div class="seat available"></div>
+                    <div class="seat taken"></div>
+                    <div class="seat available"></div>
+                    <div class="seat available"></div>
+                    <div class="seat taken"></div>
+                    <div class="seat available"></div>
+                    <div class="seat available"></div>
+                </div>
+                <div class="center-isle isle flex-start-center" aria-labelledby="menu8">
+                    <div class="seat available"></div>
+                    <div class="seat taken"></div>
+                    <div class="seat taken"></div>
+                    <div class="seat available"></div>
+                    <div class="seat taken"></div>
+                    <div class="seat available"></div>
+                    <div class="seat taken"></div>
+                    <div class="seat available"></div>
+                    <div class="seat available"></div>
+                    <div class="seat available"></div>
+                    <div class="seat taken"></div>
+                    <div class="seat taken"></div>
+                    <div class="seat taken"></div>
+                    <div class="seat available"></div>
+                    <div class="seat taken"></div>
+                    <div class="seat available"></div>
+                    <div class="seat available"></div>
+                    <div class="seat taken"></div>
+                    <div class="seat available"></div>
+                    <div class="seat available"></div>
+                    <div class="seat taken"></div>
+                    <div class="seat available"></div>
+                    <div class="seat taken"></div>
+                    <div class="seat available"></div>
+                    <div class="seat taken"></div>
+                    <div class="seat taken"></div>
+                    <div class="seat available"></div>
+                    <div class="seat available"></div>
+                    <div class="seat taken"></div>
+                    <div class="seat available"></div>
+                    <div class="seat available"></div>
+                    <div class="seat taken"></div>
+                    <div class="seat available"></div>
+                    <div class="seat available"></div>
+                    <div class="seat available"></div>
+                    <div class="seat taken"></div>
+                    <div class="seat available"></div>
+                    <div class="seat available"></div>
+                    <div class="seat taken"></div>
+                    <div class="seat available"></div>
+                    <div class="seat taken"></div>
+                    <div class="seat available"></div>
+                    <div class="seat taken"></div>
+                    <div class="seat taken"></div>
+                    <div class="seat available"></div>
+                    <div class="seat taken"></div>
+                    <div class="seat available"></div>
+                    <div class="seat taken"></div>
+                    <div class="seat available"></div>
+                    <div class="seat taken"></div>
+                    <div class="seat available"></div>
+                    <div class="seat available"></div>
+                    <div class="seat taken"></div>
+                    <div class="seat available"></div>
+                    <div class="seat taken"></div>
+                    <div class="seat taken"></div>
+                    <div class="seat available"></div>
+                    <div class="seat taken"></div>
+                    <div class="seat available"></div>
+                    <div class="seat available"></div>
+                    <div class="seat available"></div>
+                    <div class="seat available"></div>
+                    <div class="seat available"></div>
+                    <div class="seat taken"></div>
+                    <div class="seat available"></div>
+                    <div class="seat available"></div>
+                    <div class="seat available"></div>
+                    <div class="seat available"></div>
+                    <div class="seat available"></div>
+                    <div class="seat available"></div>
+                </div>
+                <div class="right-isle isle flex-start-center" aria-labelledby="menu9">
+                    <div class="seat available"></div>
+                    <div class="seat available"></div>
+                    <div class="seat taken"></div>
+                    <div class="seat available"></div>
+                    <div class="seat taken"></div>
+                    <div class="seat available"></div>
+                    <div class="seat taken"></div>
+                    <div class="seat available"></div>
+                    <div class="seat taken"></div>
+                    <div class="seat available"></div>
+                    <div class="seat taken"></div>
+                    <div class="seat available"></div>
+                    <div class="seat taken"></div>
+                    <div class="seat available"></div>
+                    <div class="seat taken"></div>
+                    <div class="seat available"></div>
+                    <div class="seat available"></div>
+                    <div class="seat taken"></div>
+                    <div class="seat available"></div>
+                    <div class="seat available"></div>
+                    <div class="seat taken"></div>
+                    <div class="seat available"></div>
+                    <div class="seat taken"></div>
+                    <div class="seat available"></div>
+                    <div class="seat available"></div>
+                    <div class="seat available"></div>
+                    <div class="seat taken"></div>
+                    <div class="seat available"></div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+
+
+
+
+    <footer class="center-positioning">
+        <p>Copyright © 2023 | Carmine Libroia</p>
     </footer>
+
+
     <script src="scripts.js"></script>
+    
 </body>
 </html>
