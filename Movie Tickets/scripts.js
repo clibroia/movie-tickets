@@ -11,6 +11,58 @@ function toggleSidebar(){
     else{menu.style.display = "grid"; toggleS = true;}
 }
 
+
+function displayAllSeats(){
+    var xhr = new XMLHttpRequest();
+    xhr.open("GET", "./seats.json");
+    xhr.responseType = 'json';
+    xhr.send();
+
+    xhr.onload = function(){
+        const res = xhr.response;
+        console.log(res);
+        let i = 1;
+
+        for(const row of res){
+            console.log("ciclo n." + i);
+
+            row.leftIsle.forEach((element) => {
+                console.log(i);
+                var seatDiv = document.createElement("div");
+                seatDiv.classList.add("seat");
+                
+                if(element == 0){seatDiv.classList.add("available");}
+                else if(element == 1){seatDiv.classList.add("taken");}
+    
+                document.querySelector(`.n1${i} .n1`).appendChild(seatDiv);
+            });
+
+            row.centralIsle.forEach((element) => {
+                console.log(i);
+                var seatDiv = document.createElement("div");
+                seatDiv.classList.add("seat");
+                
+                if(element == 0){seatDiv.classList.add("available");}
+                else if(element == 1){seatDiv.classList.add("taken");}
+    
+                document.querySelector(`.n1${i} .n2`).appendChild(seatDiv);
+            });
+
+            row.rightIsle.forEach((element) => {
+                console.log(i);
+                var seatDiv = document.createElement("div");
+                seatDiv.classList.add("seat");
+                
+                if(element == 0){seatDiv.classList.add("available");}
+                else if(element == 1){seatDiv.classList.add("taken");}
+    
+                document.querySelector(`.n1${i} .n3`).appendChild(seatDiv);
+            });
+            i++;
+        }
+    }
+}
+
 function selectSeats(event){
     if (event.target.classList.contains('seat') && event.target.classList.contains('available')) {
         if (event.target.classList.contains('selected')) {
@@ -37,3 +89,4 @@ function selectSeats(event){
 
 
 document.body.addEventListener('click', selectSeats);
+displayAllSeats();
