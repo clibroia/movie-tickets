@@ -137,7 +137,7 @@ if((window.innerWidth <= 1900 && window.innerHeight <= 1000) || (window.innerWid
             if(mobileMenu) {
                 const mobileMenuId = mobileMenu.getAttribute('id');
                 const mobileSidebar = document.querySelector(`#${mobileMenuId} > .sidebar`);
-                const seats = document.querySelectorAll('.appear-menu mobile-isle > .seat');
+                const seats = document.querySelectorAll(`#${mobileMenuId} .seat.selected`);
                 seats.forEach(seat => {
                     const seatClasses = seat.getAttribute('class');
                     seatClasses.includes('selected') ? backToAvailable(seat) : undefined; }
